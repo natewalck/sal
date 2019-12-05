@@ -514,7 +514,6 @@ class Datatable(six.with_metaclass(DatatableMetaclass)):
 
         # Initial object_list from constructor, before filtering or ordering.
         object_list = self.object_list
-
         # Consult cache, if enabled
         cache_type = self.config['cache_type']
         if cache_type == cache_types.DEFAULT:

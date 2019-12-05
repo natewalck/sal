@@ -195,6 +195,8 @@ class InventoryList(Datatable):
         processors = {'hostname': 'get_machine_link', 'last_checkin': 'format_date'}
         structure_template = 'datatableview/bootstrap_structure.html'
         page_length = server.utils.get_setting('datatable_page_length')
+        cache_type = server.utils.get_setting('cache_type')
+        cache_queryset_count = server.utils.get_setting('cache_queryset_count')
 
     def get_machine_link(self, instance, **kwargs):
         url = reverse("machine_detail", kwargs={"machine_id": instance.pk})
